@@ -1,9 +1,10 @@
-# reveal.js [![Build Status](https://travis-ci.org/hakimel/reveal.js.svg?branch=master)](https://travis-ci.org/hakimel/reveal.js) <a href="https://slides.com?ref=github"><img src="https://s3.amazonaws.com/static.slid.es/images/slides-github-banner-320x40.png?1" alt="Slides" width="160" height="20"></a>
+# Reveal.js setup with menu and toolbar
 
 
 ### Full setup
 
-Some reveal.js features, like external Markdown and speaker notes, require that presentations run from a local web server. The following instructions will set up such a server as well as all of the development tasks needed to make edits to the reveal.js source code.
+
+Step to install reveal js using npm
 
 1. Install [Node.js](http://nodejs.org/) (4.0.0 or later)
 
@@ -30,3 +31,41 @@ Some reveal.js features, like external Markdown and speaker notes, require that 
 1. Open <http://localhost:8000> to view your presentation
 
    You can change the port by using `npm start -- --port=8001`.
+
+### Now i am going to add reveal.js menu by using npm commands
+
+   1. Download and install the package in your project:
+   ```sh
+   $ npm install --save reveal.js-menu
+   ```
+2. Add the plugin to the dependencies in your presentation, as below.
+   ```sh
+   Reveal.initialize({
+			// ...
+	
+			dependencies: [
+			// ... 
+	  
+				{ src: 'node_modules/reveal.js-menu/menu.js' }
+			]
+		});
+   ```
+3. now you have to add theme stylesheet using this id="theme"
+   ```sh
+   <link rel="stylesheet" href="css/theme/black.css" id="theme">
+   ```
+4. if you want to change menu title then add below code in your section
+   ```sh
+   <section data-menu-title="Custom Menu Title"> ...</section>
+   ```
+### Now i am going to add reveal.js-toolbar using npm
+
+1. Paste below code to your gitbash
+   ```sh
+   $  npm install --save reveal.js-toolbar
+   ```
+2. add below code to dependencies
+   ```sh
+   { src: 'node_modules/reveal.js-toolbar/toolbar.js' }
+   ```
+   
